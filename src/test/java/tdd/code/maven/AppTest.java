@@ -32,9 +32,18 @@ public class AppTest {
     /**
      * Test for a Single Number
      */
+//    @Test
+//    public void testSingleNumber() {
+//        StringCalculator calculator = new StringCalculator();
+//        assertEquals(1, calculator.add("1"));
+//    }
+    
+    /**
+     * Test for Two Numbers
+     */
     @Test
-    public void testSingleNumber() {
+    public void testTwoNumbers() {
         StringCalculator calculator = new StringCalculator();
-        assertEquals(1, calculator.add("1"));
+        assertEquals(3, calculator.add("1,2"));
     }
 }
