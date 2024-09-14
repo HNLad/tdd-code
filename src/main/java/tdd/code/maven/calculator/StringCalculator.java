@@ -1,5 +1,8 @@
 package tdd.code.maven.calculator;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class StringCalculator {
 
 //	public int add(String numbers) {
@@ -50,11 +53,36 @@ public class StringCalculator {
 	/**
 	 * Test for Custom Delimiters
 	 */
+//	public int add(String numbers) {
+//		if (numbers.isEmpty()) {
+//			return 0;
+//		}
+//		
+//		String delimiter = ",";
+//		if (numbers.startsWith("//")) {
+//			int delimiterIndex = numbers.indexOf("\n");
+//			delimiter = numbers.substring(2, delimiterIndex);
+//			numbers = numbers.substring(delimiterIndex + 1);
+//		}
+//		// replace \n by delimiter
+//		numbers = numbers.replace("\n", delimiter);
+//		// split string
+//		String[] numArray = numbers.split(delimiter);
+//		int sum = 0;
+//		for (String num : numArray) {
+//			sum += Integer.parseInt(num);
+//		}
+//		return sum;
+//	}
+
+	/**
+	 * Test for Negative Numbers
+	 */
 	public int add(String numbers) {
 		if (numbers.isEmpty()) {
 			return 0;
 		}
-		
+
 		String delimiter = ",";
 		if (numbers.startsWith("//")) {
 			int delimiterIndex = numbers.indexOf("\n");
@@ -66,9 +94,23 @@ public class StringCalculator {
 		// split string
 		String[] numArray = numbers.split(delimiter);
 		int sum = 0;
+		
+		//handling any negative number in the number string
+		List<Integer> negativeNumbers = new ArrayList<>();
 		for (String num : numArray) {
-			sum += Integer.parseInt(num);
+			int value = Integer.parseInt(num);
+			if (value < 0) {
+				negativeNumbers.add(value);
+			} else {
+				sum += value;
+			}
 		}
+
+		//if negative found throw error
+		if (!negativeNumbers.isEmpty()) {
+			throw new RuntimeException("Negative numbers not allowed: " + negativeNumbers);
+		}
+
 		return sum;
 	}
 }

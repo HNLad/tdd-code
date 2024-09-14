@@ -1,6 +1,7 @@
 package tdd.code.maven;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
@@ -72,5 +73,17 @@ public class AppTest {
     public void testMultiCustomDelimiter() {
         StringCalculator calculator = new StringCalculator();
         assertEquals(7, calculator.add("//;\n3;4"));
+    }
+    
+    /**
+     * Test for Negative Numbers
+     */
+    @Test
+    public void testNegativeNumbersThrowException() {
+    	StringCalculator calculator = new StringCalculator();
+        Exception exception = assertThrows(RuntimeException.class, () -> {
+            calculator.add("1,-2");
+        });
+        assertEquals("Negative numbers not allowed: [-2]", exception.getMessage());
     }
 }
