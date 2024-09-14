@@ -86,4 +86,16 @@ public class AppTest {
         });
         assertEquals("Negative numbers not allowed: [-2]", exception.getMessage());
     }
+    
+    /**
+     * Test for Multiple Negative Numbers
+     */
+    @Test
+    public void testMultipleNegativeNumbersThrowException() {
+    	StringCalculator calculator = new StringCalculator();
+        Exception exception = assertThrows(RuntimeException.class, () -> {
+            calculator.add("1,2,-5,-7");
+        });
+        assertEquals("Negative numbers not allowed: [-5],[-7]", exception.getMessage());
+    }
 }
