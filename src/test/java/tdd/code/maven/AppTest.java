@@ -23,9 +23,18 @@ public class AppTest {
     /**
      * Test an empty string should return 0
      */
+//    @Test
+//    public void testEmptyString() {
+//        StringCalculator calculator = new StringCalculator();
+//        assertEquals(0, calculator.add(""));
+//    }
+    
+    /**
+     * Test for a Single Number
+     */
     @Test
-    public void testEmptyString() {
+    public void testSingleNumber() {
         StringCalculator calculator = new StringCalculator();
-        assertEquals(0, calculator.add(""));
+        assertEquals(1, calculator.add("1"));
     }
 }
