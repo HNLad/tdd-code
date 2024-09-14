@@ -23,38 +23,38 @@ public class AppTest {
     /**
      * Test an empty string should return 0
      */
-//    @Test
-//    public void testEmptyString() {
-//        StringCalculator calculator = new StringCalculator();
-//        assertEquals(0, calculator.add(""));
-//    }
+    @Test
+    public void testEmptyString() {
+        StringCalculator calculator = new StringCalculator();
+        assertEquals(0, calculator.add(""));
+    }
     
     /**
      * Test for a Single Number
      */
-//    @Test
-//    public void testSingleNumber() {
-//        StringCalculator calculator = new StringCalculator();
-//        assertEquals(1, calculator.add("1"));
-//    }
+    @Test
+    public void testSingleNumber() {
+        StringCalculator calculator = new StringCalculator();
+        assertEquals(1, calculator.add("1"));
+    }
     
     /**
      * Test for Two Numbers
      */
-//    @Test
-//    public void testTwoNumbers() {
-//        StringCalculator calculator = new StringCalculator();
-//        assertEquals(3, calculator.add("1,2"));
-//    }
+    @Test
+    public void testTwoNumbers() {
+        StringCalculator calculator = new StringCalculator();
+        assertEquals(3, calculator.add("1,2"));
+    }
     
     /**
      * Test for Multiple Numbers
      */
-//    @Test
-//    public void testMultipleNumbers() {
-//        StringCalculator calculator = new StringCalculator();
-//        assertEquals(3, calculator.add("1,2"));
-//    }
+    @Test
+    public void testMultipleNumbers() {
+        StringCalculator calculator = new StringCalculator();
+        assertEquals(3, calculator.add("1,2"));
+    }
     
     /**
 	 * Test for Newline Delimiters
@@ -63,5 +63,14 @@ public class AppTest {
     public void testCustomDelimiter() {
         StringCalculator calculator = new StringCalculator();
         assertEquals(7, calculator.add("1\n3,3"));
+    }
+    
+    /**
+     * Test for Multiple Custom Delimiters
+     */
+    @Test
+    public void testMultiCustomDelimiter() {
+        StringCalculator calculator = new StringCalculator();
+        assertEquals(7, calculator.add("//;\n3;4"));
     }
 }
