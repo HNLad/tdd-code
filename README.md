@@ -2,6 +2,13 @@
 
 This project implements a **String Calculator (Add)** using **Test-Driven Development (TDD)** principles.
 
+## Tech Stack
+
+- **Programming Language**: Java 8
+- **Build Tool**: Maven
+- **Testing**: JUnit 5
+- **Version Control**: Git
+
 ## Project Overview
 
 The String Calculator processes strings of numbers with various delimiters and calculates their sum. 
@@ -13,6 +20,7 @@ It includes features for custom delimiters, negative number handling, and compre
 - Default delimiters (comma and newline)
 - Negative number validation with detailed error messages
 - Full unit test coverage
+
 
 ## Installation & Setup
 
