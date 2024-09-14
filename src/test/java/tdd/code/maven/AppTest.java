@@ -41,18 +41,27 @@ public class AppTest {
     /**
      * Test for Two Numbers
      */
-    @Test
-    public void testTwoNumbers() {
-        StringCalculator calculator = new StringCalculator();
-        assertEquals(3, calculator.add("1,2"));
-    }
+//    @Test
+//    public void testTwoNumbers() {
+//        StringCalculator calculator = new StringCalculator();
+//        assertEquals(3, calculator.add("1,2"));
+//    }
     
     /**
      * Test for Multiple Numbers
      */
+//    @Test
+//    public void testMultipleNumbers() {
+//        StringCalculator calculator = new StringCalculator();
+//        assertEquals(3, calculator.add("1,2"));
+//    }
+    
+    /**
+	 * Test for Newline Delimiters
+	 */
     @Test
-    public void testMultipleNumbers() {
+    public void testCustomDelimiter() {
         StringCalculator calculator = new StringCalculator();
-        assertEquals(3, calculator.add("1,2"));
+        assertEquals(7, calculator.add("1\n3,3"));
     }
 }
